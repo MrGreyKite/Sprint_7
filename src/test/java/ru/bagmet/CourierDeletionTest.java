@@ -48,7 +48,7 @@ public class CourierDeletionTest {
     @DisplayName("Удаление курьера по несуществующему id")
     @Description("Проверяется наличие ошибки при запросе на удаление несуществующего курьера")
     public void deleteByNonExistingID() {
-        id = random.nextInt(10000);
+        id = random.nextInt(10000) + 1000;
 
         ValidatableResponse response = courierClient.deleteCourierByID(id);
 

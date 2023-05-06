@@ -57,7 +57,7 @@ public class OrderCreationTest {
     }
 
 
-    @ParameterizedTest(name="Создание заказа с корректными вариациями параметра Цвет - {color}")
+    @ParameterizedTest(name="Создание заказа с корректными вариациями параметра Цвет")
     @MethodSource("correctOrderDataForColors")
     @DisplayName("Создание заказа с вариациями по цвету")
     @Description("Проверяется, что возможно создать заказ с указанием одного или двух цветов или не указывать цвет вообще")
