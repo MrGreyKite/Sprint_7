@@ -1,0 +1,1 @@
+{"uuid":"3e4e2b38-0b9c-4813-8f82-837076789c23","name":"Авторизация курьером CourierCredentials{login='someLogin', password='', firstName='null'} с некорректными данными приводит к ошибке с кодом 400 и текстом Недостаточно данных для входа","children":["e2230e61-fccc-4ea4-8478-e39e7de622ab"],"befores":[],"afters":[],"start":1683410893557,"stop":1683410894204}
