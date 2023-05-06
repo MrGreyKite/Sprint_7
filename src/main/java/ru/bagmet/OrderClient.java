@@ -2,7 +2,7 @@ package ru.bagmet;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-import ru.bagmet.data.Order;
+import ru.bagmet.data.OrderData;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,20 +15,22 @@ public class OrderClient extends RestClient {
     private static final String ORDER_CANCEL = "/orders/cancel";
 
     @Step("Создание заказа")
-    public ValidatableResponse createOrder(Order order) {
+    public ValidatableResponse createOrder(OrderData order) {
         return given().
                 spec(getBaseSpec()).
                 body(order).
                 when().
                 post(ORDERS_PATH).
-                then().log().all();
+                then();
     }
 
     @Step("Получение заказа по трек-номеру '{trackNumber}'")
     public ValidatableResponse getOrderByTrack(int trackNumber) {
+        //если передается 0, то преобразовывается в пустую строку
+        String track = trackNumber > 0 ? String.valueOf(trackNumber) : "";
         return given().
                 spec(getBaseSpec()).
-                queryParam("t", trackNumber).
+                queryParam("t", track).
                 when().
                 get(ORDER_PATH_BY_TRACK).
                 then();
@@ -55,10 +57,13 @@ public class OrderClient extends RestClient {
 
     @Step("Принятие заказа '{orderID}' курьером с ID '{courierID}'")
     public ValidatableResponse acceptOrder(int orderID, int courierID) {
+        //если передается 0, то преобразовывается в пустую строку
+        String orderId = orderID > 0 ? String.valueOf(orderID) : "";
+        String courierId = courierID > 0 ? String.valueOf(courierID) : "";
         return given().
                 spec(getBaseSpec()).
-                pathParam("id", orderID).
-                queryParam("courierId", courierID).
+                pathParam("id", orderId).
+                queryParam("courierId", courierId).
                 when().
                 put(ORDER_ACCEPT + "/{id}").
                 then();

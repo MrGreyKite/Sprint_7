@@ -2,7 +2,7 @@ package ru.bagmet.data;
 
 import java.util.List;
 
-public class Order {
+public class OrderData {
     private String firstName;
     private String lastName;
     private String address;
@@ -13,13 +13,16 @@ public class Order {
     private String comment;
     private List<String> colors;
     private int id;
+
     private boolean inDelivery;
     private String courierFirstName;
-    int track;
+    private int track;
 
-    public Order() {}
+    private int courierId;
 
-    public Order(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> colors) {
+    public OrderData() {}
+
+    public OrderData(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> colors) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -31,7 +34,7 @@ public class Order {
         this.colors = colors;
     }
 
-    public Order(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
+    public OrderData(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -144,6 +147,14 @@ public class Order {
 
     public void setTrack(int track) {
         this.track = track;
+    }
+
+    public int getCourierId() {
+        return courierId;
+    }
+
+    public void setCourierId(int courierId) {
+        this.courierId = courierId;
     }
 
     @Override

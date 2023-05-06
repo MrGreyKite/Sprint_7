@@ -18,13 +18,12 @@ import static ru.bagmet.data.StatusCodes.CREATED;
 @Tag("courier")
 @DisplayName("Тесты на создание курьера")
 public class CourierCreationTest {
-
-    CourierClient courierClient = new CourierClient();
+    static CourierClient courierClient = new CourierClient();
     private CourierCredentials courier;
     Random random = new Random();
     String login = "johnny123";
     String password = "dodo321";
-    String firstName = "Ваня";
+    String firstName = "Джонни";
 
     String alternateLogin = "peter789";
     String anotherPassword = "qwerty000";

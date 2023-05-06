@@ -24,7 +24,7 @@ import static ru.bagmet.data.StatusCodes.*;
 @DisplayName("Тесты на авторизацию курьера")
 public class CourierLoginTest {
 
-    CourierClient courierClient = new CourierClient();
+    static CourierClient courierClient = new CourierClient();
     Random random = new Random();
     String login = "aNewExistingLogin";
     String password = "secret" + random.nextInt(1000);
@@ -85,6 +85,7 @@ public class CourierLoginTest {
     }
 
     @AfterEach
+    @Step("Очистка тестовых данных")
     public void tearDown(){
         Allure.step("Постусловие: удаление созданного курьера", () -> {
             if(loginCredentials != null) {

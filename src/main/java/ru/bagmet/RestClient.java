@@ -15,7 +15,7 @@ public class RestClient {
                 setBaseUri(BASE_URI).
                 setBasePath("/api/v1").
                 setContentType(ContentType.JSON).
-                log(LogDetail.ALL).
+                log(LogDetail.URI).
                 build();
     }
 

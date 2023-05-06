@@ -32,6 +32,7 @@ public class CourierClient extends RestClient {
                 then();
     }
 
+    @Step("Отправка запроса на удаление курьера по ID")
     public ValidatableResponse deleteCourierByID(String courierID) {
         return given().
                 spec(getBaseSpec()).
