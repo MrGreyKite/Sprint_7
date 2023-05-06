@@ -26,9 +26,9 @@ public class CourierLoginTest {
 
     static CourierClient courierClient = new CourierClient();
     Random random = new Random();
-    String login = "aNewExistingLogin";
+    String login = "aNewExistingLogin" + random.nextInt(1000);
     String password = "secret" + random.nextInt(1000);
-    String firstName = "Курьер";
+    String firstName = "Курьер" + random.nextInt(1000);
     CourierCredentials loginCredentials;
 
     @BeforeEach
@@ -90,7 +90,8 @@ public class CourierLoginTest {
         Allure.step("Постусловие: удаление созданного курьера", () -> {
             if(loginCredentials != null) {
                 ValidatableResponse resp = courierClient.loginWithCourier(loginCredentials);
-                courierClient.deleteCourierByID(resp.extract().path("id"));
+                int id = resp.extract().path("id");
+                courierClient.deleteCourierByID(id);
             }
         });
     }

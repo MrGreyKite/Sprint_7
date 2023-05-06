@@ -21,12 +21,12 @@ public class CourierCreationTest {
     static CourierClient courierClient = new CourierClient();
     private CourierCredentials courier;
     Random random = new Random();
-    String login = "johnny123";
-    String password = "dodo321";
-    String firstName = "Джонни";
+    String login = "johnny" + random.nextInt(1000);
+    String password = "dodo" + random.nextInt(1000);
+    String firstName = "Джонни" + random.nextInt(1000);
 
-    String alternateLogin = "peter789";
-    String anotherPassword = "qwerty000";
+    String alternateLogin = "peter" + random.nextInt(1000);
+    String anotherPassword = "qwerty" + random.nextInt(1000);
     String anotherFirstName = "Тестин";
 
     @Test
@@ -128,9 +128,10 @@ public class CourierCreationTest {
     @AfterEach
     public void tearDown(){
         Allure.step("Постусловие: удаление созданного курьера", () -> {
-            if(courier != null) {
+            if((courier.getLogin() != null) && (courier.getPassword() != null)) {
                 CourierCredentials loginCredentials = new CourierCredentials(courier.getLogin(), courier.getPassword());
-                courierClient.deleteCourierByID(courierClient.loginWithCourier(loginCredentials).extract().body().path("id"));
+                int id = courierClient.loginWithCourier(loginCredentials).extract().body().path("id");
+                courierClient.deleteCourierByID(id);
             }
         });
         }

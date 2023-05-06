@@ -53,12 +53,4 @@ public class CourierClient extends RestClient {
                 then();
     }
 
-    @Step("Получение информации о курьере по ID")
-    public ValidatableResponse getCourierData(int courierID) {
-        return given().
-                spec(getBaseSpec()).
-                when().
-                get(COURIER_DATA_PATH.replace("{id}", String.valueOf(courierID))).
-                then();
-    }
 }
