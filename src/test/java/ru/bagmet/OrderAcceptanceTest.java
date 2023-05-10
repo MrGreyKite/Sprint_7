@@ -7,7 +7,6 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.*;
 import ru.bagmet.data.CourierCredentials;
 import ru.bagmet.data.OrderData;
-import ru.bagmet.data.StatusCodes;
 
 import java.util.ArrayList;
 import java.util.Collections;

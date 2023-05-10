@@ -1,7 +1,5 @@
 package ru.bagmet.data;
 
-import io.qameta.allure.Step;
-
 public class CourierCredentials {
 
     private String login;

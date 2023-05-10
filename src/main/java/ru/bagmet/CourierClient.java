@@ -10,7 +10,6 @@ public class CourierClient extends RestClient {
 
     private static final String COURIER_PATH = "/courier";
     private static final String COURIER_LOGIN_PATH = "/courier/login";
-    private static final String COURIER_DATA_PATH = "/courier/{id}/ordersCount";
 
     @Step("Отправка запроса на создание курьера")
     public ValidatableResponse createCourier(CourierCredentials courier) {

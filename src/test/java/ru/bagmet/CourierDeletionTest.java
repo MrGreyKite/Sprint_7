@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.bagmet.data.CourierCredentials;
-import ru.bagmet.data.StatusCodes;
 
 import java.util.Random;
 
