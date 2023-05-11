@@ -1,0 +1,1 @@
+{"uuid":"a4754cc7-459f-4f24-9d48-dc14d7925313","name":"Авторизация курьером CourierCredentials{login='nonExistingLogin', password='nonExistingPassword', firstName='null'} с некорректными данными приводит к ошибке с кодом 404 и текстом Учетная запись не найдена","children":["a84b3f50-183d-4180-a52c-6f1777c43848"],"befores":[],"afters":[],"start":1683410894842,"stop":1683410895558}
